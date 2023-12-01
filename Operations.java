@@ -1,23 +1,23 @@
 
-class Addition implements OperationInterface {
+class Plus implements OperationInterface {
     public double calculate(double a, double b) {
         return a + b;
     }
 }
 
-class Subtraction implements OperationInterface {
+class Minus implements OperationInterface {
     public double calculate(double a, double b) {
         return a - b;
     }
 }
 
-class Multiplication implements OperationInterface {
+class Multiply implements OperationInterface {
     public double calculate(double a, double b) {
         return a * b;
     }
 }
 
-class Division implements OperationInterface {
+class Divide implements OperationInterface {
     public double calculate(double a, double b) {
         if (b == 0) {
             throw new IllegalArgumentException("Division by zero is not allowed");
@@ -35,10 +35,10 @@ class Power implements OperationInterface {
 class OperationFactory {
     public static OperationInterface getOperation(String operation) {
         switch (operation) {
-            case "+": return new Addition();
-            case "-": return new Subtraction();
-            case "*": return new Multiplication();
-            case "/": return new Division();
+            case "+": return new Plus();
+            case "-": return new Minus();
+            case "*": return new Multiply();
+            case "/": return new Divide();
             case "**": return new Power();
             default:
                 throw new IllegalArgumentException("Invalid operation");
